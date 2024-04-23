@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h2>Verify Phone</h2>
+    <p>Ваш номер: +7{{ phone_number }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <p>Подсказка: Код можно найти в админке, sxs - 123</p>
+</body>
+</html>

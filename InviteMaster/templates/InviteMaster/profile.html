@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+</head>
+<body>
+    <h2>Профиль</h2>
+    <p>Ваш номер: {{ user.phone_number }}</p>
+    <p>Код для приглашения друга: {{ user.invite_code }}</p>
+    <p>Кол-во использований вашего кода: {{ user.used_count }}</p>
+
+    {% if form %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+    {% if user.referral_code %}
+        <p>Введенный вами код: {{ user.referral_code }}.</p>
+    {% endif %}
+</body>
+</html>

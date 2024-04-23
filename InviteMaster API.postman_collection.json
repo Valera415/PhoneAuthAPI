@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "3098c7ec-c264-4b6f-b93c-33728323c27d",
+		"name": "InviteMaster API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34473141"
+	},
+	"item": [
+		{
+			"name": "Profile data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"555\",\r\n    \"referral_code\": \"ceb4a4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/authorize/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"authorize",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get authorization code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/generate_code/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"generate_code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Input referral code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone_number\": \"555\",\r\n    \"referral_code\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/referral_code/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"referral_code",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
